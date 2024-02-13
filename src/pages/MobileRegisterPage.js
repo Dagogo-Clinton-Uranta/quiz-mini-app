@@ -15,6 +15,7 @@ import {
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UPLOADIMG from '../assets/images/upload.png';
+import DEFAULTIMG from '../assets/images/rec.png';
 import bonecoleIntro from 'src/assets/images/bonecoleIntro.png';
 import Alert from '@mui/material/Alert';
 import { signup } from 'src/redux/actions/auth.action';
@@ -26,6 +27,7 @@ import { FaCaretDown } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core';
 import LogoImg from '../assets/img/logo.png';
 import ProfileImg from '../assets/img/profile.png';
+import { CardMedia } from  '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -103,6 +105,7 @@ function MobileRegisterPage() {
   const [telephone, setTelephone] = useState('');
   const [schoolOrigin, setSchoolOrigin] = useState('');
 
+
   const [page2, setPage2] = useState(false);
   const [page1, setPage1] = useState(true);
 
@@ -167,7 +170,28 @@ function MobileRegisterPage() {
           </h1>
           <div style={{ borderBottom: '3px solid black', marginTop: '10px', marginBottom: '10px' }}></div>
           <center>
-            <img src={ProfileImg} alt="profile" style={{ width: '100px', height: '100px' }} />
+            
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
+          <CardMedia
+            style={{ border: '0.2px solid black', backgroundColor: '#fff', width: '140px' }}
+            component="img"
+            height="120"
+            width="140"
+            image={file ? file: DEFAULTIMG}
+            alt="IMG"
+          />
+          <Button component="label" variant="contained" style={{ minHeight: '45px', minWidth: '145px', backgroundColor: '#000000', marginTop: '15px' }}>
+            <b>TÉLÉCHARGER</b>
+            <input
+              type="file"
+              style={{ display: 'none' }}
+              onChange={handleselectedFile}
+            />
+          </Button>
+        </div>
+            
+            {/*<img src={ProfileImg} alt="profile" style={{ width: '100px', height: '100px' }} />*/}
+          
           </center>
           {error && (
             <div>

@@ -114,7 +114,7 @@ const QuizletDetailsPage = () => {
             }}
         >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '1rem',                  }}>
+                <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '1rem'}}>
                     Q1 {item.title}
                 </Typography>
             </div>

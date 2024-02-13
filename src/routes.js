@@ -77,6 +77,7 @@ export default function Router() {
         { path: 'home', element: <QuizletHomePage /> },
         { path: 'quiz-details', element: <QuizletDetailsPage /> },
         { path: 'quiz-content', element: <QuizContentPage /> },
+        
         // { path: 'home', element: <MobileWelcomePage /> },
         { path: 'feed', element: <FeedPage /> },
         { path: 'profile', element: <ProfilePage /> },
