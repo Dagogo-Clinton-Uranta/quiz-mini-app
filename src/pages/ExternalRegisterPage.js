@@ -34,16 +34,6 @@ function ExternalRegisterPage() {
 
   const { user,error } = useSelector((state) => state.auth);
 
-  useEffect(()=>{
-    if(user){
-     navigate('/dashboard/home')
-    }
- },[user])
-  
-
-
-
-
 
   return (
     <>

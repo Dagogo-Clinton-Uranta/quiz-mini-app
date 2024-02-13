@@ -7,7 +7,7 @@ import { bgBlur } from '../../../utils/cssStyles';
 // components
 import Iconify from '../../../components/iconify';
 //
-import bonLogo from 'src/assets/images/bonlogo.png'
+import bonLogo from 'src/assets/img/logo.png'
 
 import Searchbar from './Searchbar2';
 import AccountPopover from './AccountPopover';

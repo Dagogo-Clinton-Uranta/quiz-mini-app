@@ -61,6 +61,10 @@ import MainPage from './pages/MainPage';
 import CoursePage from './pages/CoursePage';
 import PaymentOptions from './pages/PaymentOptions';
 import PaymentCallBackPageOM from './pages/PaymentCallBackOM';
+import EntryPage from './pages/Quizlet/EntryPage';
+import QuizletHomePage from './pages/Quizlet/QuizletHomePage';
+import QuizletDetailsPage from './pages/Quizlet/QuizletDetailsPage';
+import QuizContentPage from './pages/Quizlet/QuizletContentPage';
 
 export default function Router() {
   const routes = useRoutes([
@@ -69,7 +73,11 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to="external-login" />, index: true },
-        { path: 'home', element: <MobileWelcomePage /> },
+        { path: 'entry', element: <EntryPage /> },
+        { path: 'home', element: <QuizletHomePage /> },
+        { path: 'quiz-details', element: <QuizletDetailsPage /> },
+        { path: 'quiz-content', element: <QuizContentPage /> },
+        // { path: 'home', element: <MobileWelcomePage /> },
         { path: 'feed', element: <FeedPage /> },
         { path: 'profile', element: <ProfilePage /> },
         { path: 'logout', element: <LogoutPage /> },
@@ -117,14 +125,6 @@ export default function Router() {
       ]
     },
     {
-      path: 'external-login',
-      element: <DashboardLayout />,
-      children:[
-        {path:'', element:<ExternalLoginPage/>}
-      ]
-     
-    },
-    {
       path: 'external-register',
       element: <DashboardLayout />,
       children:[
@@ -132,10 +132,18 @@ export default function Router() {
       ]
      
     },
-
+   //NEW
+    {
+      path: 'entry',
+      element: <EntryPage/>,
+    },
+    {
+      path: 'external-login',
+      element: <ExternalLoginPage/>,
+    },
     {
       path: 'register',
-      element:/* <Login />*/<MobileRegisterPage/>,
+      element: <MobileRegisterPage/>,
     },
 
    

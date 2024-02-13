@@ -1,141 +1,116 @@
-import { Container,Grid, TextField, Typography, TextareaAutosize, Button, Paper,Divider,Box} from '@mui/material';
-import { useRef, useState,useEffect } from 'react';
+import { Container, Grid, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import UPLOADIMG from '../assets/images/upload.png';
-import bonecoleIntro from 'src/assets/images/bonecoleIntro.png'
-import startQuote from 'src/assets/images/startQuote.png'
-import endQuote from 'src/assets/images/endQuote.png'
-import bonLogo from 'src/assets/images/bonlogo.png'
-import ShortDashboardLayout from 'src/layouts/dashboard/ShortDashboardLayout';
-import { signin,signInWithGoogle} from 'src/redux/actions/auth.action';
-
-import { fetchGroups, fetchMyGroups, uploadUserSettings} from 'src/redux/actions/group.action';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { notifyErrorFxn } from 'src/utils/toast-fxn';
-import users from 'src/_mock/user';
-
+import { signInWithGoogle } from 'src/redux/actions/auth.action';
+import LogoImg from '../assets/img/logo.png';
+import { useDispatch } from 'react-redux';
 
 function ExternalLoginPage() {
   const navigate = useNavigate();
-  const [file, setFile] = useState();
- 
-  const [fileSize, setFileSize] = useState();
-  
   const dispatch = useDispatch();
 
-  const [newPassword,setNewPassword] =useState('')
-  const [confirmPassword,setConfirmPassword] =useState('')
-  const [companySize,setCompanySize] =useState('')
-
-  const { user,error } = useSelector((state) => state.auth);
-
-  const googleLoginFxn = (navigate) =>{
-    dispatch(signInWithGoogle(navigate))
-  }
-  
-
-  useEffect(()=>{
-    if(user){
-     navigate('/dashboard/home')
-    }
- },[user])
-
-
-
-
+  const googleLoginFxn = (navigate) => {
+    dispatch(signInWithGoogle(navigate));
+  };
 
   return (
     <>
-    <Container maxWidth="xs" sx={{backgroundColor:"white", border:"1px solid lightgray"}}> 
-
-    
-
-    <Grid item xs={12} style={{ display: 'flex', justifyContent: 'center', flexDirection:"column",paddingTop:"1rem",paddingBottom:"40px"}}>
-    <center>
-    <h1 style={{position:"relative",display:"block",fontWeight:"bold",fontSize:"30px"}}>Bienvenue sur bonÉcole!</h1>
-     <br/> 
-    <p>Plateforme de cours en ligne sur - demande</p>
-    </center>
-   
-    </Grid>
-
-  
-  
-
-      <Grid container item xs={12} spacing={2} style={{ display: 'flex',flexDirection:"column" ,justifyContent: 'center',marginTop:"10px",marginBottom:"40px" }}>
-         
-      <Grid item xs={12} spacing={2} style={{ display: 'flex', justifyContent: 'center',alignItems:"center" }}>
-           
-          
-           <Button   variant="contained" 
-          style={{ backgroundColor: "#483c94",color:"#FFFFFF",width:"100%",height:"3rem",fontSize:"12px",
+      <Container maxWidth="xs" sx={{ backgroundColor: 'white', border: '1px solid lightgray', mt: 2 }}>
+        <Grid
+          item
+          xs={12}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            paddingTop: '1rem',
+            paddingBottom: '40px',
           }}
-          onClick ={()=>{navigate('/login')}}
-          >
-          Se connecter avec Facebook
-          </Button>
+        >
+          <center>
+          <img src={LogoImg} alt="Logo" style={{ marginBottom: '20px', width: '150px', height: '60px' }} />
+          </center>
+          <hr/>
         </Grid>
 
-
-
-      
-
-
-        <Grid item xs={12} spacing={2} style={{ display: 'flex', justifyContent: 'center',alignItems:"center" }}>
-           
-          
-           <Button   variant="contained" 
-          style={{ backgroundColor: "#f00c44",color:"#FFFFFF",width:"100%",height:"3rem",fontSize:"12px",
+        <Grid
+          container
+          item
+          xs={12}
+          spacing={2}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            marginTop: '10px',
+            marginBottom: '40px',
           }}
-          onClick ={()=>{googleLoginFxn(navigate)}}
-          >
-          Se connecter avec Google
-          </Button>
-       
-        </Grid>
-
-
-
-
-    
-          <Grid item xs={12} spacing={2} style={{ display: 'flex', justifyContent: 'center',alignItems:"center" }}>
-           
-          
-             <Button   variant="contained" 
-            style={{ backgroundColor: "#000000",color:"#FFFFFF",width:"100%",height:"3rem",fontSize:"12px",
-            }}
-            onClick ={()=>{navigate('/login')}}
+        >
+          <Grid item xs={12} spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Button
+              variant="contained"
+              style={{ backgroundColor: '#CC4436', color: '#FFFFFF', width: '100%', height: '65px', padding: '10px', marginLeft: '40px', marginRight: '40px', fontSize: '18px' }}
+              onClick={() => {
+                navigate('/login');
+              }}
             >
-            Se connecter avec Email
+              GMAIL
             </Button>
-         
-          
-            <br/><br/><br/>
-  
           </Grid>
-          
+
+          <Grid item xs={12} spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Button
+              variant="contained"
+              style={{ backgroundColor: '#485FEB', color: '#FFFFFF', width: '100%', height: '65px', padding: '10px', marginLeft: '40px', marginRight: '40px', fontSize: '18px' }}
+              onClick={() => {
+                navigate('/register');
+              }}
+            >
+              FACEBOOK
+            </Button>
+          </Grid>
+
+          <Grid item xs={12} spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Button
+              variant="contained"
+              style={{ backgroundColor: '#161441', color: '#FFFFFF', width: '100%', height: '65px', padding: '10px', marginLeft: '40px', marginRight: '40px', fontSize: '18px' }}
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
+              EMAIL
+            </Button>
+
+            <br />
+            <br />
+            <br />
+          </Grid>
         </Grid>
 
-    
-        
-    <Grid item xs={12} style={{ display: 'flex', justifyContent: 'center', flexDirection:"column",paddingTop:"1rem",paddingBottom:"40px"}}>
-    <center>
-    
-    <p style={{textDecoration:"underline"}} onClick ={()=>{navigate('/login')}}>En vous connectant, vous acceptez nos conditions generales d'utilisation et notre politique de confidentialite </p>
-   
-   <br/>
-   
-  
-   
-    </center>
-
-    <p> Vous n'avez pas déjà un compte? &nbsp; <span onClick ={()=>{navigate('/external-register')}} style={{color:"red"}}>S'inscrire</span> </p>
-   
-    </Grid>
-    
-
-</Container>
+        <Grid
+          item
+          xs={12}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            paddingTop: '1rem',
+            paddingBottom: '40px',
+          }}
+        >
+          <center>
+            <p
+              style={{ textDecoration: 'underline', cursor: 'pointer'}}
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
+             Already Registered? Login
+            </p>
+            <div style={{borderBottom: "4px solid black", marginTop: '10px'}}></div>
+            <br />
+          </center>
+        </Grid>
+      </Container>
     </>
   );
 }

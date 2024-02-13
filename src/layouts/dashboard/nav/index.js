@@ -12,10 +12,8 @@ import Scrollbar from '../../../components/scrollbar';
 import NavSection from '../../../components/nav-section';
 //
 import navConfig from './config';
-import CMCLOGO from '../../../assets/images/CMCNetwork-logo.png';
-import { fontFamily } from '@mui/system';
+import CMCLOGO from '../../../assets/img/logo.png';
 
-import {AiOutlineLock} from 'react-icons/ai'
 
 // ----------------------------------------------------------------------
 

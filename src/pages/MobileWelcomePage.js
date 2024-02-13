@@ -160,14 +160,7 @@ useEffect(()=>{
 
 },[open])
 
-/*video manipulation logic end */
-
-
 useEffect(()=>{
-   if(!user){
-    navigate('/login')
-   }
-
    dispatch(getTeachers())
    dispatch(fetchCategorySubjects("Terminales"))
    dispatch(fetchAllCategories())
