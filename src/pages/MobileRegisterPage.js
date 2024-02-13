@@ -181,7 +181,7 @@ function MobileRegisterPage() {
             alt="IMG"
           />
           <Button component="label" variant="contained" style={{ minHeight: '45px', minWidth: '145px', backgroundColor: '#000000', marginTop: '15px' }}>
-            <b>TÉLÉCHARGER</b>
+            <b>CHANGE</b>
             <input
               type="file"
               style={{ display: 'none' }}
