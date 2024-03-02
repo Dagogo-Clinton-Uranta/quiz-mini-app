@@ -14,7 +14,7 @@ function ExternalLoginPage() {
 
   return (
     <>
-      <Container maxWidth="xs" sx={{ backgroundColor: 'white', border: '1px solid lightgray', mt: 2 }}>
+      <Container maxWidth="xs" sx={{ backgroundColor: 'white', border: '1px solid lightgray', mt: 10 }}>
         <Grid
           item
           xs={12}
@@ -23,7 +23,7 @@ function ExternalLoginPage() {
             justifyContent: 'center',
             flexDirection: 'column',
             paddingTop: '1rem',
-            paddingBottom: '40px',
+            paddingBottom: '0px',
           }}
         >
           <center>

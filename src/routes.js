@@ -78,7 +78,7 @@ export default function Router() {
         { path: 'quiz-details', element: <QuizletDetailsPage /> },
         { path: 'quiz-content', element: <QuizContentPage /> },
         // { path: 'home', element: <MobileWelcomePage /> },
-        { path: 'feed', element: <FeedPage /> },
+        { path: 'feed', element: <FeedPage /> },  
         { path: 'profile', element: <ProfilePage /> },
         { path: 'logout', element: <LogoutPage /> },
         { path: 'video', element: <VideoPage /> },
@@ -119,17 +119,14 @@ export default function Router() {
     },
     {
       path: 'login',
-      element: <DashboardLayout />,
-      children:[
-        {path:'', element:<MobileLoginPage/>}
-      ]
+      element: <MobileLoginPage />,
     },
     {
       path: 'external-register',
-      element: <DashboardLayout />,
-      children:[
-        {path:'', element:<ExternalRegisterPage/>}
-      ]
+      element: <ExternalRegisterPage />,
+      // children:[
+      //   {path:'', element:<ExternalRegisterPage/>}
+      // ]
      
     },
    //NEW

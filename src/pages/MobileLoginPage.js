@@ -66,7 +66,7 @@ function MobileLoginPage() {
 
   return (
     <>
-      <Container maxWidth="xs" sx={{ backgroundColor: 'white', border: '1px solid lightgray' }}>
+      <Container maxWidth="xs" sx={{ backgroundColor: 'white', border: '1px solid lightgray', mt: 10 }}>
         <Grid
           item
           xs={12}
@@ -75,7 +75,7 @@ function MobileLoginPage() {
             justifyContent: 'center',
             flexDirection: 'column',
             paddingTop: '1rem',
-            paddingBottom: '40px',
+            paddingBottom: '0px',
           }}
         >
             <center>
