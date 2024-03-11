@@ -257,7 +257,7 @@ const URLSound = window.URL || window.webkitURL
 /*SAVING TO BROWSER DATABASE END */
 
 /*SUBJECT INFO SAVING */
-const firstSplit =presentSubject.body.split('.')[1]
+const firstSplit = presentSubject && presentSubject.body && presentSubject.body.split('.')[1]
 const secondSplit = firstSplit? firstSplit.split(':')[1]:""
 const thirdSplit =  secondSplit? secondSplit.split(/[0-9]/):""
 
