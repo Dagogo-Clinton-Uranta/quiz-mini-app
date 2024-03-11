@@ -376,12 +376,7 @@ function MobileRegisterPage() {
                     fontSize: '15px',
                   }}
                   onClick={() => {
-                    if (email && firstName && lastName && password) {
-                      setPage2(true);
-                      setPage1(false);
-                    } else {
-                      notifyErrorFxn('please fill in all fields before proceeding!');
-                    }
+                    navigate('/login');
                   }}
                 >
                   CANCEL
