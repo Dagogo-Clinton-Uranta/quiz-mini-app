@@ -16,13 +16,12 @@ import "firebase/auth";
 };*/
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCoJ09cJKy5Vx4kql4eaqsF5Ft5Op8zQVc",
-  authDomain: "bonecole-2f0f4.firebaseapp.com",
-  projectId: "bonecole-2f0f4",
-  storageBucket: "bonecole-2f0f4.appspot.com",
-  messagingSenderId: "314467559669",
-  appId: "1:314467559669:web:295c9a98a021390e897dbc",
-  measurementId: "G-D0LW2Q5E1L"
+  apiKey: "AIzaSyAMw_I-rYX-shAqF2GyLNzrXYps3UAbEho",
+  authDomain: "quizlet-8d9b6.firebaseapp.com",
+  projectId: "quizlet-8d9b6",
+  storageBucket: "quizlet-8d9b6.appspot.com",
+  messagingSenderId: "890622047732",
+  appId: "1:890622047732:web:0060c62e2f6300c97675a1"
 };
 
 // Initialize Firebase

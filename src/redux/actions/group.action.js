@@ -1267,3 +1267,28 @@ export const fetchPackSubjects = (category) => async (dispatch) => {
     dispatch(saveDownloadReload(downrel))
   
    }
+
+
+   //QUIZ
+
+
+   
+export const submitQuizTaken = (userId, quizResult, quizAnswersObject, navigate) => async (dispatch) => {
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  var today  = new Date();
+   
+  db.collection("quizResult").add({
+    user: userId,
+    chapterId: quizAnswersObject.chapterId,
+    quizId: quizAnswersObject.quizId,
+    score: quizResult.score,
+    percentage: quizResult.percentage,
+    passed: quizResult.passed ? true : false,
+    quizAnswersObject: quizAnswersObject,
+    createdAt: today.toLocaleDateString("en-US", options)
+  })
+  .then(() => { 
+    notifySuccessFxn("Quiz submitted");
+    navigate('/dashboard/home', { replace: true });
+  });
+};

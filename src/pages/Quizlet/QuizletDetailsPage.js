@@ -14,7 +14,7 @@ import { notifyErrorFxn, notifyInfoFxn,notifySuccessFxn } from 'src/utils/toast-
 
 
 import { setCurrentQuizDetailsAndAnswers,
-         updateStudentQuizzesTaken,
+         submitQuizTaken,
          setPresentQuizQuestion,
          setCurrentQuestionIndex} from 'src/redux/actions/group.action';
 
@@ -27,6 +27,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { gradeQuiz } from '../../utils/gradeQuiz';
 
 
 function QuizletDetailsPage() {
@@ -85,7 +86,7 @@ questionNumber: 1,},
     optionC: {optionDesc: 'suleja', optionLeter: 'C'},
     optionD: {optionDesc: 'nass', optionLeter: 'D'},
     question: "capital of nigeria",
-    questionNumber: 1,}
+    questionNumber: 3,}
 ],
 quizFileUrl: "ww.fb.com",
 subject: "English",
@@ -144,8 +145,7 @@ useEffect(()=>{
 
 
 if(openQuestionIndex >= chosenQuiz.questionsArray.length && currentQuestionIndex >= chosenQuiz.questionsArray.length){
-  
-     submitQuizAnswers(user.uid,currentQuizDetailsAndAnswers,navigate)
+     submitQuizAnswers('1cRXYYKTYHco2mJQuZxQAinRuth1',currentQuizDetailsAndAnswers,navigate)
  
  } 
 
@@ -191,12 +191,47 @@ if( focusedId <= openQuestionIndex){
 
 }
 
-const submitQuizAnswers = (userId,quizAnswersObject,navigate) =>{
-  setLoadingSubmit(true)
- 
- dispatch(updateStudentQuizzesTaken(userId,quizAnswersObject,navigate))
-  
- }
+
+
+const submitQuizAnswers = (userId, quizAnswersObjectOld, navigate) => {
+  setLoadingSubmit(true);
+
+  const quizAnswersObject = {
+    "chapterId": "1M3uERuQKY552jjxjFhB",
+    "quizId": "pLelqMO4PNK7gk3XHPs7",
+    "studentAnswers": [
+        {
+            "questionId": 'JIDKui389389',
+            "correctAnswer": "C",
+            "chosenAnswer": "A"
+        },
+        {
+            "questionId": 'q378GHS2389',
+            "correctAnswer": "D",
+            "chosenAnswer": "C"
+        },
+        {
+            "questionId": 'UD782DJHS',
+            "correctAnswer": "B",
+            "chosenAnswer": "B"
+        },
+        {
+            "questionId": 'IUD093089jS',
+            "correctAnswer": "C",
+            "chosenAnswer": "C"
+        },
+    ]
+  };
+
+  const quizResult = gradeQuiz(quizAnswersObject);
+
+  dispatch(submitQuizTaken(userId, quizResult, quizAnswersObject, navigate));
+
+  setTimeout(() => {
+    
+  }, 6000);
+};
+
 
 const addToStudentAnswers = (questionNumber,chosenAnswer,questionIndex) =>{
  // console.log("QUESTION NUMBER INPUT IS:", questionNumber)
@@ -296,7 +331,7 @@ const URLSound = window.URL || window.webkitURL
 /*SAVING TO BROWSER DATABASE END */
 
 /*SUBJECT INFO SAVING */
-const firstSplit =presentSubject.body.split('.')[1]
+const firstSplit = presentSubject && presentSubject.body ? presentSubject.body.split('.')[1] : '';
 const secondSplit = firstSplit? firstSplit.split(':')[1]:""
 const thirdSplit =  secondSplit? secondSplit.split(/[0-9]/):""
 
