@@ -76,6 +76,8 @@ export default function Router() {
         { element: <Navigate to="external-login" />, index: true },
         { path: 'entry', element: <EntryPage /> },
         { path: 'home', element: <QuizletHomePage /> },
+        { path: 'quiz', element: <QuizletHomePage /> },
+        
         { path: 'quiz-details', element: <QuizletDetailsPage /> },
         { path: 'quiz-content', element: <QuizContentPage /> },
 

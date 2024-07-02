@@ -18,7 +18,7 @@ const navConfig = [
   {
     title: 'Quiz',
     // path: '/dashboard/test-payment',
-    path: '/dashboard/home',
+    path: '/dashboard/quiz',
     icon:<AiOutlineInbox/>
     // icon: icon('ic_analytics'),
   },
