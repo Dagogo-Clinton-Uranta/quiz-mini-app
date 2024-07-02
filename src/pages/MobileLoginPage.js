@@ -154,8 +154,8 @@ function MobileLoginPage() {
               variant="contained"
               style={{ backgroundColor: '#CC4436', color: '#FFFFFF', width: '75%', height: '3rem', fontSize: '15px' }}
               onClick={() => {
-                navigate('/dashboard/home', { replace: true });
-                return;
+                //navigate('/dashboard/home', { replace: true });
+                //return;
                 LoginFxn(existingUser, navigate);
               }}
             >

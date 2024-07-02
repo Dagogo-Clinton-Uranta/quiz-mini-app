@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
        user: null,
+       school:{},
        error: '',
        message: '',
       isLoading: false,
@@ -17,6 +18,9 @@ const loginSlice = createSlice({
         state.user = action.payload;
         state.error = '';
         state.message = '';
+      },
+      saveSchool:(state, action)=>{
+        state.school = action.payload;
       },
     loginFailed: (state, action) => {
         
@@ -64,6 +68,7 @@ const { actions, reducer } = loginSlice;
 
 export const {
  loginSuccess,
+ saveSchool,
  loginFailed,
  signupPending,
  signupFailed,

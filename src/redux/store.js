@@ -6,6 +6,7 @@ import storage from './storage';
 import authReducer from './reducers/auth.slice';
 import groupReducer from './reducers/group.slice';
 import inboxReducer from './reducers/chat.slice';
+import settingsReducer from './reducers/settings.slice';
 import candidateReducer from './reducers/candidate.slice';
 import transactionReducer from './reducers/transactions.slice';
 import cartReducer from './reducers/cart.slice';
@@ -18,6 +19,7 @@ const reducers = combineReducers({
   group: groupReducer,
   cart: cartReducer,
   inbox: inboxReducer,
+  settings: settingsReducer,
   transaction: transactionReducer,
   candidates:candidateReducer,
 });
