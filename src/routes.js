@@ -65,6 +65,7 @@ import EntryPage from './pages/Quizlet/EntryPage';
 import QuizletHomePage from './pages/Quizlet/QuizletHomePage';
 import QuizletDetailsPage from './pages/Quizlet/QuizletDetailsPage';
 import QuizContentPage from './pages/Quizlet/QuizletContentPage';
+import QuizletResultsPage from './pages/Quizlet/QuizletResultsPage';
 
 export default function Router() {
   const routes = useRoutes([
@@ -77,6 +78,8 @@ export default function Router() {
         { path: 'home', element: <QuizletHomePage /> },
         { path: 'quiz-details', element: <QuizletDetailsPage /> },
         { path: 'quiz-content', element: <QuizContentPage /> },
+
+        { path: 'results', element: <QuizletResultsPage /> },
 
         // { path: 'home', element: <MobileWelcomePage /> },
         { path: 'feed', element: <FeedPage /> },  

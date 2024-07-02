@@ -16,15 +16,15 @@ const navConfig = [
     // icon: icon('ic_analytics'),
   },
   {
-    title: 'Quiz Details',
+    title: 'Quiz',
     // path: '/dashboard/test-payment',
-    path: '/dashboard/quiz-details',
+    path: '/dashboard/home',
     icon:<AiOutlineInbox/>
     // icon: icon('ic_analytics'),
   },
   {
-    title: 'Quiz Content',
-    path: '/dashboard/quiz-content',
+    title: 'Results',
+    path: '/dashboard/results',
     icon:<AiOutlineInbox/>
     // icon: icon('ic_analytics'),
   },

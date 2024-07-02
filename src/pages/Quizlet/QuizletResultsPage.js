@@ -14,18 +14,18 @@ import h from '../../assets/images/h.png';
 
 
 
-const QuizletHomePage = () => {
+const QuizletResultsPage = () => {
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
    const data = [
-    {title: 'Mathematics', img: m, amt: 0}, 
-    {title: 'English Language', img: e, amt: 0},
-    {title: 'Geography', img: g, amt: 0},
-    {title: 'Fine Art', img: h, amt: 0},
-    {title: 'Agricultural Science', img: m, amt: 0},
-    {title: 'Economics', img: e, amt: 0},
-    {title: 'Computer Science', img: c, amt: 0},
-    {title: 'Fine Art', img: h, amt: 0}];
+    {title: 'Mathematics', img: m, amt: 92}, 
+    {title: 'English Language', img: e, amt: 63},
+    {title: 'Geography', img: g, amt: 41},
+    {title: 'Fine Art', img: h, amt: 88},
+    {title: 'Agricultural Science', img: m, amt: 75},
+    {title: 'Economics', img: e, amt: 82},
+    {title: 'Computer Science', img: c, amt: 99},
+    {title: 'Fine Art', img: h, amt: 90}];
   return (
     <Container
       maxWidth="xs"
@@ -52,7 +52,7 @@ const QuizletHomePage = () => {
               marginTop: '30px',
             }}
           >
-            Home
+            Results
           </p>
         </center>
       </Grid>
@@ -132,4 +132,4 @@ const QuizletHomePage = () => {
     </Container>
   );
 };
-export default QuizletHomePage;
+export default QuizletResultsPage;
