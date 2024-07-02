@@ -26,6 +26,11 @@ const QuizletResultsPage = () => {
     {title: 'Economics', img: e, amt: 82},
     {title: 'Computer Science', img: c, amt: 99},
     {title: 'Fine Art', img: h, amt: 90}];
+
+    const { themeColor } = useSelector((state) => state.settings);
+    console.log("theme color is-->",themeColor)
+
+    
   return (
     <Container
       maxWidth="xs"
@@ -73,7 +78,8 @@ const QuizletResultsPage = () => {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={item.img}  style={{width:"50px",height:"40px"}} />
+                    {/*<img src={item.img}  style={{width:"50px",height:"40px"}} />*/}
+                    <div style={{borderRadius:"50%",backgroundColor:themeColor?themeColor:"#D72A34",fontSize:"1.5rem",color:"white",width:"2rem",height:"2rem",display:"flex",justifyContent:"center"}}>{item.title.substring(0,1)}</div>
                     &nbsp; &nbsp; &nbsp;
                     <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '1rem' }}>
                     {item.title}
