@@ -26,6 +26,11 @@ const QuizletHomePage = () => {
     {title: 'Economics', img: e, amt: 0},
     {title: 'Computer Science', img: c, amt: 0},
     {title: 'Fine Art', img: h, amt: 0}];
+
+    const { themeColor } = useSelector((state) => state.settings);
+    console.log("theme color is-->",themeColor)
+
+
   return (
     <Container
       maxWidth="xs"
@@ -73,7 +78,10 @@ const QuizletHomePage = () => {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={item.img}  style={{width:"50px",height:"40px"}} />
+                    {/*<img src={item.img}  style={{width:"50px",height:"40px"}} />*/}
+
+                    <div style={{borderRadius:"50%",backgroundColor:themeColor?themeColor:"#D72A34",fontSize:"1.5rem",color:"white",width:"2rem",height:"2rem",display:"flex",justifyContent:"center"}}>{item.title.substring(0,1)}</div>
+
                     &nbsp; &nbsp; &nbsp;
                     <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '1rem' }}>
                     {item.title}

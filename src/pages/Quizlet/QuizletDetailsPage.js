@@ -48,7 +48,8 @@ function QuizletDetailsPage() {
   };
  
 
-
+  const { themeColor } = useSelector((state) => state.settings);
+  console.log("theme color is-->",themeColor)
 
   const { presentSubject,
           currentQuizDetailsAndAnswers,submittingSingleAnswer,
@@ -474,7 +475,7 @@ allChapterLessons.filter((item)=>(item.chapterId === chapter.uid)).sort((a,b)=>(
 
     <Button onClick={()=>{addToStudentAnswers(chapter.questionNumber,chosenOption,index)}}
     
-    style={{ backgroundColor: "red",color:"#FFFFFF", paddingTop: '10px', paddingBottom: '10px',width:"70%", 
+    style={{ backgroundColor: themeColor?themeColor:"#D72A34",color:"#FFFFFF", paddingTop: '10px', paddingBottom: '10px',width:"70%", 
                      paddingRight: '30px', paddingLeft: '30px'}}>
       {finalQuestion && (currentQuestionIndex === chosenQuiz.questionsArray.length-1) ?(submittingSingleAnswer?"submitting Quiz...":"SUBMIT QUIZ"):(submittingSingleAnswer?"saving answer...":(currentQuestionIndex<openQuestionIndex?"SAVE":"NEXT"))}
       </Button>

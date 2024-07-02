@@ -268,7 +268,7 @@ export const fetchUserData = (id, type, navigate) => async (dispatch) => {
        
      }).catch((error) => {
        console.log("Error getting document:", error);
-       notifyErrorFxn("School that the parent belongs to not found");
+       notifyErrorFxn("School that the quiz taker belongs to not found");
      
      });
 
